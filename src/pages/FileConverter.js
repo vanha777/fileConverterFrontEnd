@@ -42,7 +42,7 @@ export default function FileConverter() {
 
 
     const getSignedRes = (fileName) => {
-        fetch('http://localhost:777/getSignedRequest', {
+        fetch('https://salty-reef-01562.herokuapp.com/getSignedRequest', {
             method: 'POST',
             headers: { 'Content-type': 'application/json; charset=UTF-8', },
             body: JSON.stringify({
@@ -64,7 +64,7 @@ export default function FileConverter() {
     const handleSubmit = async (e) => {
         if (fileName.length > 0) {
             setLoading(null);
-            fetch("http://localhost:777/upLoad", {
+            fetch("https://salty-reef-01562.herokuapp.com/upLoad", {
                 method: "POST",
                 body: formData,
             })

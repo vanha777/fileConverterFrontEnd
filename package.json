@@ -16,7 +16,7 @@
     "re-build": "rm -rf build node_modules && yarn install && yarn build"
   },
   "engines": {
-    "node": ">=14.0.0"
+    "node": "18.x"
   },
   "eslintConfig": {
     "extends": [

@@ -1,17 +1,15 @@
 import { Helmet } from 'react-helmet-async';
 import React from 'react';
-import { useState, useEffect, useRef } from 'react';
-import { Card, Container, Stack, Typography, Button, TextField, Box, IconButton } from '@mui/material';
-import CircularProgress from '@material-ui/core/CircularProgress';
+import { useState, useRef } from 'react';
+import { Card, Container, Typography, Button, Box} from '@mui/material';
+
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded.js';
 
 
 import CloudUploadIcon from '@mui/icons-material/CloudUpload.js';
-import CheckCircleIcon from '@mui/icons-material/CheckCircle.js';
 import PictureAsPdfSharpIcon from '@mui/icons-material/PictureAsPdfSharp.js';
 import CloudSyncSharpIcon from '@mui/icons-material/CloudSyncSharp.js';
 import FileNameContainer from '../components/fileConverter/FileNameContainer.js'
-import { ConstructionOutlined, UploadFile } from '@mui/icons-material';
 import DownloadIcon from '@mui/icons-material/Download.js';
 import LinearWithValueLabel from '../components/fileConverter/ProgressBar.js'
 

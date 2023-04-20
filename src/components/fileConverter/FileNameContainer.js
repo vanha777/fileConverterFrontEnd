@@ -1,12 +1,11 @@
 import React from 'react';
 import { useState, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
-import { Card, Container, Stack, Typography, Button, TextField, Box, IconButton } from '@mui/material';
+import { Typography, Box} from '@mui/material';
 import CircularProgress from '@mui/material/CircularProgress';
-import CloudUploadIcon from '@mui/icons-material/CloudUpload';
+
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
-import PictureAsPdfSharpIcon from '@mui/icons-material/PictureAsPdfSharp';
-import CloudSyncSharpIcon from '@mui/icons-material/CloudSyncSharp';
+
 
 function FileNameDisplay({ name}/*loading*/) {
   const [loading,setLoading] = useState(true);

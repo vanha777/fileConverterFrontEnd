@@ -21,7 +21,7 @@ export default function DashboardAppPage(props) {
 
     //getting files infos
     useEffect(() => {
-        fetch("http://localhost:777/files", {
+        fetch("https://salty-reef-01562.herokuapp.com/files", {
             method: "GET",
         }).then((result) => result.json()).then((result)=>{
             console.log(result);

@@ -1,27 +1,26 @@
 import React from 'react';
 import { useState } from 'react';
 import PropTypes from 'prop-types';
-import { Typography, Box} from '@mui/material';
+import { Typography, Box } from '@mui/material';
 import CircularProgress from '@mui/material/CircularProgress';
 
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 
 
-function FileNameDisplay({ name}/*loading*/) {
-  const [loading,setLoading] = useState(true);
+function FileNameDisplay({ name }/*loading*/) {
+  const [loading, setLoading] = useState(true);
   setTimeout(() => {
     setLoading(false)
   }, 3000);
   return (
     <Box sx={{ display: 'flex', flexDirection: 'column' }}>
       <Box sx={{ display: 'flex', width: '100%' }}>
-        <Typography sx={{ m: 1 }}>{name}</Typography>
         {loading === true ? (
           <CircularProgress sx={{ m: 1 }} color="secondary" size={30} thickness={2} />
         ) : (
           <CheckCircleIcon sx={{ color: 'green', fontSize: 30 }} />
-
         )}
+        <Typography sx={{ m: 1 }}>{name}</Typography>
       </Box>
     </Box>
   );
@@ -38,7 +37,7 @@ export default function FileNameContainer({ fileName }) {
 
   const fileNames = fileName.flat();
 
-  
+
 
   const fileNamesToDisplay = fileNames.map((file) => {
     return <FileNameDisplay key={file.name} name={file.name} /*loading={file.loading}*/ />;

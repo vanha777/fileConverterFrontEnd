@@ -123,7 +123,7 @@ export default function FileConverter() {
                 <title> Dashboard: File Converter | Minimal UI </title>
             </Helmet>
 
-            <Container sx={{ display: 'block', height: '100%' }}>
+            <Container sx={{ display: 'block', }}>
                 <Box sx={{ display: 'flex' }}>
                     <Typography variant="h4" >
                         {/*File Converter*/}
@@ -150,8 +150,8 @@ export default function FileConverter() {
 
                             {loading === true ?
                                 (
-                                    <Box sx={{ display: 'flex' }} >
-                                        <Button sx={{ m: 1 }} variant="outlined" component="label" startIcon={<CloudUploadIcon />}>
+                                    <Box sx={{ display: 'flex', }} >
+                                        <Button sx={{ m: 1 , }} variant="outlined" component="label" startIcon={<CloudUploadIcon />}>
                                             {/*Upload*/}
                                             Tải Lên
                                             <input hidden accept="image/*" multiple type="file" ref={fileInput} onChange={handleFileChange} />

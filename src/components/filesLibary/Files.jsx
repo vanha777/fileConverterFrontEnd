@@ -17,7 +17,7 @@ const FileComponent = (props) => {
     const { filesSelected, updateFilesSelected } = useFilesState();
     //test
     useEffect(() => {
-       // console.log(filesSelected)
+        // console.log(filesSelected)
     }, [filesSelected]);
     //end.
 
@@ -48,7 +48,8 @@ const FileComponent = (props) => {
         }} onClick={handleClick}>
 
             <CardHeader sx={{
-            display: 'flex', flexDirection: isDesktop ? 'row' : 'column', justifyContent: 'center',textAlign: 'center' }} title={files.key}
+                display: 'flex', flexDirection: isDesktop ? 'row' : 'column', justifyContent: 'center', textAlign: 'center'
+            }} title={files.key}
                 subheader={`Date: ${files.lastModified}`}
                 avatar={
                     clicked ? (
@@ -61,8 +62,8 @@ const FileComponent = (props) => {
 
 
             <CardContent sx={{ alignItems: 'center' }}>
-            {/*<iframe src={files.previewUrl} style={{ width: 200, height: 250 }}></iframe>*/}
-                <img src='/aiProfile.jpg' style={{ width: 200, height: 250 }} />
+                <iframe src={files.previewUrl} style={{ width: 200, height: 250 }}></iframe>
+                {/*<img src='/aiProfile.jpg' style={{ width: 200, height: 250 }} />*/}
             </CardContent>
 
         </Card>

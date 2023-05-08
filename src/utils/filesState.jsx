@@ -17,21 +17,7 @@ export const FilesStateProvider = (props) => {
 
 
   //global useState For app.js to set user interraction
-  const [filesState, setFilesState] = useState([
-    {
-      key: 'result1683353759611.pdf',
-      lastModified: '2023-05-06T06:16:01.000Z',
-      size: 1661971,
-      previewUrl: 'https://imgconverter.s3.amazonaws.com/result1683353759611.pdf'
-    },
-    {
-      key: 'result1683353581343.pdf',
-      lastModified: '2023-05-06T06:13:03.000Z',
-      size: 1391475,
-      previewUrl: 'https://imgconverter.s3.amazonaws.com/result1683353581343.pdf'
-    },
-
-  ]);
+  const [filesState, setFilesState] = useState();
 
 
   const updateFilesState = (newData) => {

@@ -62,7 +62,7 @@ export default function FileConverter() {
     const handleSubmit = async (e) => {
         if (fileName.length > 0) {
             setLoading(null);
-            fetch("https://salty-reef-01562.herokuapp.com/upLoad", {
+           await fetch("https://salty-reef-01562.herokuapp.com/upLoad", {
                 method: "POST",
                 body: formData,
             })

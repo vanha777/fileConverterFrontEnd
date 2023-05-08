@@ -6,6 +6,7 @@ import CheckBoxIcon from '@material-ui/icons/CheckBox';
 import CheckBoxOutlineBlankIcon from '@material-ui/icons/CheckBoxOutlineBlank';
 import Checkbox from '@material-ui/core/Checkbox';
 import { useMediaQuery } from '@material-ui/core';
+import Test from './PdfPreview.jsx';
 
 
 
@@ -16,17 +17,17 @@ const FileComponent = (props) => {
     const files = props.files;
     const { filesSelected, updateFilesSelected } = useFilesState();
     //test
-    useEffect(() => {
-        // console.log(filesSelected)
-    }, [filesSelected]);
+   // useEffect(() => {
+       // console.log(filesSelected)
+    //}, [filesSelected]);
     //end.
 
 
     const addFilesSelected = (files) => {
-        updateFilesSelected([...filesSelected, files.key]);
+        updateFilesSelected([...filesSelected,files]);
     }
     const removeFilesSeleced = (files) => {
-        const updatedFiles = filesSelected.filter(item => item !== files.key);
+        const updatedFiles = filesSelected.filter(item => item.key !== files.key);
         updateFilesSelected(updatedFiles);
     }
     const handleClick = (files) => {
@@ -60,10 +61,8 @@ const FileComponent = (props) => {
                     )
                 } />
 
-
             <CardContent sx={{ alignItems: 'center' }}>
-                <iframe src={files.previewUrl} style={{ width: 200, height: 250 }}></iframe>
-                {/*<img src='/aiProfile.jpg' style={{ width: 200, height: 250 }} />*/}
+                <Test files={files.previewUrl} />
             </CardContent>
 
         </Card>

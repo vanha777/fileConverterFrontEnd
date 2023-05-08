@@ -8,6 +8,8 @@ import FilesDashboard from '../components/filesLibary/FilesDashboard.jsx';
 import { useTheme } from '@mui/material/styles';
 import { Grid, Container, Typography, Paper, Card, CardContent } from '@mui/material';
 import { FilesStateProvider } from '../utils/filesState.jsx';
+import Snackbar from "@material-ui/core/Snackbar";
+import Alert from '@material-ui/lab/Alert';
 // components
 
 // sections

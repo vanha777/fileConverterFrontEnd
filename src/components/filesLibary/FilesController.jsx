@@ -30,7 +30,8 @@ const FileControlCard = () => {
 
     const handleFileNameChange = () => {
         console.log('chaning name')
-        console.log(filesSelected)
+        filesSelected.map((files) => {window.open(files.previewUrl, '_blank'); })
+        
     };
 
     const handleFileDownload = () => {

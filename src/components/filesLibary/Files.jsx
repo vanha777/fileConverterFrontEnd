@@ -1,10 +1,10 @@
-import { Grid, Container, Typography, Paper, Card, CardContent, CardHeader, Button } from '@mui/material';
+import { Grid, Card, CardContent, CardHeader, } from '@mui/material';
 import React, { useState, useEffect } from 'react';
-import { useTheme } from '@mui/material/styles';
+//import { useTheme } from '@mui/material/styles';
 import { useFilesState } from '../../utils/filesState.jsx';
 import CheckBoxIcon from '@material-ui/icons/CheckBox';
 import CheckBoxOutlineBlankIcon from '@material-ui/icons/CheckBoxOutlineBlank';
-import Checkbox from '@material-ui/core/Checkbox';
+
 import { useMediaQuery } from '@material-ui/core';
 import Test from './PdfPreview.jsx';
 
@@ -12,19 +12,19 @@ import Test from './PdfPreview.jsx';
 
 const FileComponent = (props) => {
     const isDesktop = useMediaQuery('(min-width:600px)');
-    const theme = useTheme();
+    //const theme = useTheme();
     const [clicked, setClicked] = useState(false);
     const files = props.files;
     const { filesSelected, updateFilesSelected } = useFilesState();
     //test
-   // useEffect(() => {
-       // console.log(filesSelected)
+    // useEffect(() => {
+    // console.log(filesSelected)
     //}, [filesSelected]);
     //end.
 
 
     const addFilesSelected = (files) => {
-        updateFilesSelected([...filesSelected,files]);
+        updateFilesSelected([...filesSelected, files]);
     }
     const removeFilesSeleced = (files) => {
         const updatedFiles = filesSelected.filter(item => item.key !== files.key);
@@ -70,13 +70,13 @@ const FileComponent = (props) => {
 }
 
 export default function Files() {
-    const { filesState, updateFilesState } = useFilesState();
+    const { filesState } = useFilesState();
 
 
     return (
         <Grid container spacing={3}>
             {filesState.map((file, index) => (
-                <Grid item xs={12} md={6} lg={4}>
+                <Grid key={index} item xs={12} md={6} lg={4}>
                     <FileComponent files={file} />
                 </Grid>
             ))

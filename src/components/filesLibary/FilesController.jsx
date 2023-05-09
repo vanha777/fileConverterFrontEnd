@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import Card from '@material-ui/core/Card';
-import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import IconButton from '@mui/material/IconButton';
 import PhotoLibraryIcon from '@mui/icons-material/PhotoLibrary';
@@ -10,20 +8,17 @@ import DownloadIcon from '@material-ui/icons/GetApp';
 import ShareIcon from '@material-ui/icons/Share';
 import EditIcon from '@material-ui/icons/Edit';
 import Box from '@mui/material/Box';
-import { grey, pink } from '@mui/material/colors';
 import { useFilesState } from '../../utils/filesState.jsx';
 import FilesCopy from './filesCopy.jsx';
-import Snackbar from "@material-ui/core/Snackbar";
-import Alert from '@material-ui/lab/Alert';
 
 const FileControlCard = () => {
     const { filesSelected, updateFilesSelected } = useFilesState();
-    const { filesState, updateFilesState } = useFilesState();
+    const { updateFilesState } = useFilesState();
     const [filesCopy, setFilesCopy] = useState(null);
 
     useEffect(() => {
         if (filesCopy == null) {
-            return ;
+            return;
         }
         setTimeout(() => {
             setFilesCopy(null);
@@ -61,9 +56,9 @@ const FileControlCard = () => {
     }
 
     const handleFileShare = async () => {
-        console.log(filesCopy)
+
         if (filesSelected.length > 1) {
-            console.log('Please Select One Files At A Times');
+            console.warn('Please Select One Files At A Times');
             setFilesCopy(false);
             return;
         }
@@ -105,7 +100,7 @@ const FileControlCard = () => {
             }).catch((err) => { console.log(err) });
         }
         const deleteObjects = () => {
-            const requestBody = { filesSelected: filesSelected };
+            //const requestBody = { filesSelected: filesSelected };
             fetch("https://salty-reef-01562.herokuapp.com/filesDelete", {
                 method: "POST",
                 body: JSON.stringify(deleteFiles),
@@ -134,7 +129,7 @@ const FileControlCard = () => {
                     ? (<PhotoLibraryIcon color="primary" />)
                     : (<ImageNotSupportedIcon />)
                 }
-                <Typography variant="h7" component="p">
+                <Typography variant="h6" component="p">
                     {filesSelected.length} selected
                 </Typography>
             </Box>

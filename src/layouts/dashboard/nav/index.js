@@ -64,8 +64,7 @@ export default function Nav({ openNav, onCloseNav }) {
 
             <Box sx={{ ml: 2 }}>
               <Typography variant="subtitle2" sx={{ color: 'text.primary' }}>
-                {/*{account.displayName}*/}
-                Bình Bụng Bự
+                {account.displayName}
               </Typography>
 
               <Typography variant="body2" sx={{ color: 'text.secondary' }}>
@@ -90,19 +89,16 @@ export default function Nav({ openNav, onCloseNav }) {
 
           <Box sx={{ textAlign: 'center' }}>
             <Typography gutterBottom variant="h6">
-              {/*Get more?*/}
-              Học Không ?
+            Check it out 
             </Typography>
 
             <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-              {/*From only $69*/}
-              Chỉ Vài Triệu Thôi
+            The Copy Coder Is In Town !
             </Typography>
           </Box>
 
-          <Button href="https://material-ui.com/store/items/minimal-dashboard/" target="_blank" variant="contained">
-            {/*Upgrade to Pro*/}
-            Lớp Nhạc Lado
+          <Button href="https://master--stellular-stroopwafel-36ea55.netlify.app" target="_blank" variant="contained">
+          CopyCoder Blog
           </Button>
         </Stack>
       </Box>

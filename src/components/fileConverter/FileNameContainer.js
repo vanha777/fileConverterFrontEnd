@@ -30,7 +30,7 @@ export default function FileNameContainer({ fileName }) {
   if (fileName.length === 0) {
     return (
       <div sx={{ display: 'flex', flexDirection: 'column' }}>
-        <Typography>{/*No Files Selected*/}Không Tìm Thấy File</Typography>
+        <Typography>No Files Selected</Typography>
       </div>
     );
   }

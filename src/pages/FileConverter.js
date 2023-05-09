@@ -1,7 +1,7 @@
 import { Helmet } from 'react-helmet-async';
 import React from 'react';
 import { useState, useRef } from 'react';
-import { Card, Container, Typography, Button, Box} from '@mui/material';
+import { Card, Container, Typography, Button, Box } from '@mui/material';
 
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded.js';
 
@@ -57,12 +57,12 @@ export default function FileConverter() {
 
     const handleClear = () => {
         window.location.reload();
-      };
+    };
 
     const handleSubmit = async (e) => {
         if (fileName.length > 0) {
             setLoading(null);
-           await fetch("https://salty-reef-01562.herokuapp.com/upLoad", {
+            await fetch("https://salty-reef-01562.herokuapp.com/upLoad", {
                 method: "POST",
                 body: formData,
             })
@@ -126,8 +126,7 @@ export default function FileConverter() {
             <Container sx={{ display: 'block', }}>
                 <Box sx={{ display: 'flex' }}>
                     <Typography variant="h4" >
-                        {/*File Converter*/}
-                        Ghép Hình Thành PDF
+                        Image To PDF Converter
                     </Typography>
                     < PictureAsPdfSharpIcon sx={{ ml: 'auto' }} color="primary" />
                 </Box>
@@ -135,12 +134,12 @@ export default function FileConverter() {
                 <Box sx={{ display: 'flex', height: '70%', justifyContent: 'center', alignItems: 'center' }}>
 
                     <Card sx={{ display: 'block', minWidth: '50%', minHeight: '50%', textAlign: "center", backgroundColor: 'white', m: 1 }} >
-                        { fileName.length > 0 ? (
-                        <Box sx={{display:'flex',justifyContent: 'flex-end'}}>
-                        <Button sx={{ m: 1 }} size="small" variant="outlined" color="error" component="label" onClick={handleClear} startIcon={<CloseRoundedIcon />}>Xóa</Button>
-                        </Box>
-                        ):null}
-                        <Typography variant="h6" sx={{ p: 2 }}>{/*Upload Your Files*/} Xin Đính Kèm File</Typography>
+                        {fileName.length > 0 ? (
+                            <Box sx={{ display: 'flex', justifyContent: 'flex-end' }}>
+                                <Button sx={{ m: 1 }} size="small" variant="outlined" color="error" component="label" onClick={handleClear} startIcon={<CloseRoundedIcon />}>Remove</Button>
+                            </Box>
+                        ) : null}
+                        <Typography variant="h6" sx={{ p: 2 }}>Upload Your Files</Typography>
 
                         <Box component="main" sx={{ overflowY: 'auto', flexGrow: 1, display: 'block', p: 2, border: '1px dashed grey', m: 2, maxHeight: 170 }}>
                             <FileNameContainer fileName={fileName} />
@@ -151,22 +150,19 @@ export default function FileConverter() {
                             {loading === true ?
                                 (
                                     <Box sx={{ display: 'flex', }} >
-                                        <Button sx={{ m: 1 , }} variant="outlined" component="label" startIcon={<CloudUploadIcon />}>
-                                            {/*Upload*/}
-                                            Tải Lên
+                                        <Button sx={{ m: 1, }} variant="outlined" component="label" startIcon={<CloudUploadIcon />}>
+                                            Upload
                                             <input hidden accept="image/*" multiple type="file" ref={fileInput} onChange={handleFileChange} />
                                         </Button>
                                         <Button sx={{ m: 1 }} variant="contained" component="label" startIcon={<CloudSyncSharpIcon />} onClick={handleSubmit}>
-                                            {/*Submit*/}
-                                            Ghép File
+                                            Submit
                                         </Button>
                                     </Box>
                                 )
                                 : loading === false ?
                                     (
                                         <Button sx={{ m: 1 }} variant="contained" color="success" component="a" href={file} startIcon={<DownloadIcon />} >
-                                            {/*Open File*/}
-                                            Xem Kết Quả
+                                            Open File
                                         </Button>
                                     )
                                     : (
